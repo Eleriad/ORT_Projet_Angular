@@ -40,6 +40,10 @@ export class QuestionListComponent implements OnInit {
     });
   }
 
+  editPHPQuestion(question: Question): void {
+
+  }
+
   deletePHPQuestion(question: Question): void {
     this.quests = this.quests.filter(h => h !== question);
     this.questionService.deleteQuestion(question).subscribe(quests => console.log(quests));

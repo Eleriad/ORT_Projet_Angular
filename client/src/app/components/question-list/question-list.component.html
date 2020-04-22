@@ -1,6 +1,6 @@
-<h1>Ajouter une nouvelle question :</h1>
+<div class="container container-add text-center">
+  <h1>Ajouter une nouvelle question :</h1>
 
-<div>
   <label for="theme">Thème : </label>
   <input [(ngModel)]="newQuestion.theme" placeholder="theme" name="theme"> <br>
 
@@ -25,20 +25,24 @@
   <label for="anecdote">Anecdote : </label>
   <input [(ngModel)]="newQuestion.anecdote" placeholder="anecdote" name="anecdote"> <br>
 
-  <input type="button" (click)="addQuestion()" value="Ajouter la question">
+  <input type="button" class="btn btn-dark" (click)="addQuestion()" value="Ajouter la question">
 </div>
 
-
-<h1>Voici la liste des questions</h1>
-
-<div *ngFor="let question of quests">
-  <h2>Thème : {{question.theme}}</h2>
-  <p><strong>{{question.question}}</strong></p>
-  <p>{{question.prop1}}</p>
-  <p>{{question.prop2}}</p>
-  <p>{{question.prop3}}</p>
-  <p>{{question.prop4}}</p>
-  <p>{{question.difficulte}}</p>
-  <p>{{question.anecdote}}</p>
-  <input type="button" (click)="deletePHPQuestion(question)" value="Supprimer cette question">
+<hr>
+<div class="container container-list text-center">
+  <h1>Voici la liste des questions</h1>
+  <br>
+  <div *ngFor="let question of quests" class="question justify-content-lg-center text-center">
+    <h4>Thème : {{question.theme}}</h4>
+    <p><strong>{{question.question}}</strong></p>
+    <p>{{question.prop1}}</p>
+    <p>{{question.prop2}}</p>
+    <p>{{question.prop3}}</p>
+    <p>{{question.prop4}}</p>
+    <p>{{question.difficulte}}</p>
+    <p>{{question.anecdote}}</p>
+    <input type="button" (click)="deletePHPQuestion(question)" class="btn btn-dark" value="Supprimer cette question">
+    <input type="button" (click)="editPHPQuestion(question)" routerLink="/question-edit/{{question.id}}"
+      class="btn btn-dark" value="Editer cette question">
+  </div>
 </div>
