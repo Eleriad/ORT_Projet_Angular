@@ -15,8 +15,14 @@ export class QuestionService {
   /** Version Node */
   private urlNode = 'http://localhost:3000';
 
-  getQuestion(): Observable<Question[]> {
+  getQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(this.urlNode + "/quizz");
+  }
+
+  getQuestion(questionId): Observable<Question> {
+    const q = this.http.get<Question>(this.urlNode + "/quizz/" + questionId);
+    console.log(q);
+    return q;
   }
 
   addQuestion(newQuestion: Question): Observable<Question> {
@@ -27,10 +33,14 @@ export class QuestionService {
     return this.http.delete<Question>(this.urlNode + "/quizz/" + deletedQuestion.id);
   }
 
+  updateQuestion(question: Question): Observable<Question> {
+    return this.http.put<Question>(this.urlNode + "/quizz/" + question.id, question);
+  }
+
   /** Version PHP */
   private urlPHP = 'http://localhost:81/Angular_Quizz/api-php';
 
-  getPHPQuestion(): Observable<Question[]> {
+  getPHPQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>(this.urlPHP + "/quizz.php");
   }
 
@@ -46,5 +56,4 @@ export class QuestionService {
     formData.append('anecdote', newQuestion.anecdote);
     return this.http.post<Question>(this.urlPHP + "/quizz_insert.php", formData)
   }
-
 }

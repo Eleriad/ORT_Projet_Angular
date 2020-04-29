@@ -1,1 +1,33 @@
-<p>edit-question works !</p>
+<div class="container container-add text-center">
+  <h1>Ajouter une nouvelle question :</h1>
+
+  <label for="theme">Thème : </label>
+  <input [(ngModel)]="newQuestion.theme" name="theme"> <br>
+
+  <label for="question">Question : </label>
+  <input [(ngModel)]="newQuestion.question" name="question"> <br>
+
+  <label for="prop1">Proposition 1 : </label>
+  <input [(ngModel)]="newQuestion.prop1" name="prop1"> <br>
+
+  <label for="prop2">Proposition 2 : </label>
+  <input [(ngModel)]="newQuestion.prop2" name="prop2"> <br>
+
+  <label for="prop3">Proposition 3 : </label>
+  <input [(ngModel)]="newQuestion.prop3" name="prop3"> <br>
+
+  <label for="prop4">Proposition 4 : </label>
+  <input [(ngModel)]="newQuestion.prop4" name="prop4"> <br>
+
+  <label for="difficulte">Difficulté : </label>
+  <input [(ngModel)]="newQuestion.difficulte" name="difficulte"> <br>
+
+  <label for="anecdote">Anecdote : </label>
+  <input [(ngModel)]="newQuestion.anecdote" name="anecdote"> <br>
+
+  <input type="button" class="btn btn-dark" (click)="editQuestion()" value="Modifier la question">
+  <br>
+  <br>
+  <p>En cas d'erreur, vous pouvez revenir en arrière en cliquant sur le bouton ci-dessous :</p>
+  <input type="button" class="btn btn-dark" (click)="goBack()" value="Retour">
+</div>

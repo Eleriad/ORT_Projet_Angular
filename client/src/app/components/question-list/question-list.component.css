@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 /* Général */
 h1 {
+  font-family: "Playfair Display", serif;
   margin: 10px;
   padding: 15px;
 }
@@ -8,6 +12,7 @@ h1 {
 /* Partie ajout de question */
 .container-add {
   background-color: darkgrey;
+  font-family: 'Roboto', sans-serif;
 }
 
 label, input {
@@ -16,16 +21,17 @@ label, input {
 
 /* Partie liste des questions */
 .container-list {
+  align-items: center;
   background-color: midnightblue;
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .question {
-  width: 700px;
   background-color: lightslategray;
   color: black;
   margin-bottom: 20px;
+  width: 700px;
 }

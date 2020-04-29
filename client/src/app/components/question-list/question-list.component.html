@@ -1,37 +1,10 @@
-<div class="container container-add text-center">
-  <h1>Ajouter une nouvelle question :</h1>
-
-  <label for="theme">Thème : </label>
-  <input [(ngModel)]="newQuestion.theme" placeholder="theme" name="theme"> <br>
-
-  <label for="question">Question : </label>
-  <input [(ngModel)]="newQuestion.question" placeholder="question" name="question"> <br>
-
-  <label for="prop1">Proposition 1 : </label>
-  <input [(ngModel)]="newQuestion.prop1" placeholder="prop1" name="prop1"> <br>
-
-  <label for="prop2">Proposition 2 : </label>
-  <input [(ngModel)]="newQuestion.prop2" placeholder="prop2" name="prop2"> <br>
-
-  <label for="prop3">Proposition 3 : </label>
-  <input [(ngModel)]="newQuestion.prop3" placeholder="prop3" name="prop3"> <br>
-
-  <label for="prop4">Proposition 4 : </label>
-  <input [(ngModel)]="newQuestion.prop4" placeholder="prop4" name="prop4"> <br>
-
-  <label for="difficulte">Difficulté : </label>
-  <input [(ngModel)]="newQuestion.difficulte" placeholder="difficulte" name="difficulte"> <br>
-
-  <label for="anecdote">Anecdote : </label>
-  <input [(ngModel)]="newQuestion.anecdote" placeholder="anecdote" name="anecdote"> <br>
-
-  <input type="button" class="btn btn-dark" (click)="addQuestion()" value="Ajouter la question">
-</div>
-
-<hr>
 <div class="container container-list text-center">
-  <h1>Voici la liste des questions</h1>
-  <br>
+  <h1>Voici la liste des questions :</h1>
+  <br><br>
+  <p>Vous pouvez ajouter une nouvelle question en cliquant ici :
+    <input type="button" routerLink="/question-add/" class="btn btn-dark" value="Ajouter une nouvelle question">
+  </p>
+  <br><br>
   <div *ngFor="let question of quests" class="question justify-content-lg-center text-center">
     <h4>Thème : {{question.theme}}</h4>
     <p><strong>{{question.question}}</strong></p>
@@ -42,7 +15,6 @@
     <p>{{question.difficulte}}</p>
     <p>{{question.anecdote}}</p>
     <input type="button" (click)="deletePHPQuestion(question)" class="btn btn-dark" value="Supprimer cette question">
-    <input type="button" (click)="editPHPQuestion(question)" routerLink="/question-edit/{{question.id}}"
-      class="btn btn-dark" value="Editer cette question">
+    <input type="button" routerLink="/question-edit/{{question.id}}" class="btn btn-dark" value="Editer cette question">
   </div>
 </div>

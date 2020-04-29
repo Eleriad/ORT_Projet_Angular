@@ -27,21 +27,17 @@ export class QuestionListComponent implements OnInit {
   constructor(private questionService: QuestionService) { }
 
   ngOnInit(): void {
-    this.getPHPQuestion();
+    this.getPHPQuestions();
   }
 
-  getPHPQuestion(): void {
-    this.questionService.getPHPQuestion().subscribe(questions => this.quests = questions);
+  getPHPQuestions(): void {
+    this.questionService.getPHPQuestions().subscribe(questions => this.quests = questions);
   }
 
   addQuestion(): void {
     this.questionService.postPHPQuestion(this.newQuestion).subscribe(newQuestion => {
       console.log(newQuestion)
     });
-  }
-
-  editPHPQuestion(question: Question): void {
-
   }
 
   deletePHPQuestion(question: Question): void {
